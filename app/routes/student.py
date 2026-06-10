@@ -52,3 +52,11 @@ def scenario_debrief(attempt_id):
     payload = scenario.debrief(attempt)
     return render_template("debrief.html", payload = payload)
 
+@student_bp.route("/scenario/<int:attempt_id>/reset", methods = ["POST"])
+def reset_scenario(attempt_id):
+    attempt = SessionAttempt.query.get_or_404(attempt_id)
+    attempt.state = "not_started"
+    attempt.score = 0
+    db.session.commit()
+    return jsonify({"ok": True, "message": "Scenario reset"})
+
