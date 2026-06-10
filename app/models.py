@@ -24,3 +24,11 @@ class EventLog(db.Model):
     event_type = db.Column(db.String(100), nullable=False)
     payload = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Scenario(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    key = db.Column(db.String(100), unique=True, nullable=False)
+    title = db.Column(db.String(200), nullable=False)
+    objective = db.Column(db.Text, nullable=False)
+    debrief = db.Column(db.Text, nullable=False)
+    is_active = db.Column(db.Boolean, default=True)
