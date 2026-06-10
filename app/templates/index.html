@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>AI-Driven Attack Simulator</h1>
+<p>Select a training scenario to begin.</p>
+
+<form method="post" action="/scenario/telemetry_tamper/start">
+  <button type="submit">Start Telemetry Integrity Investigation</button>
+</form>
+{% endblock %}

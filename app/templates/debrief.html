@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ payload.scenario }}</h1>
+<p><strong>Score:</strong> {{ payload.score }}</p>
+<p><strong>State:</strong> {{ payload.state }}</p>
+<p>{{ payload.debrief }}</p>
+{% endblock %}
